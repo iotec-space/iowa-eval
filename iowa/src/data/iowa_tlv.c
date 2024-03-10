@@ -50,7 +50,7 @@ static size_t prv_encodeFloat(double data,
 {
     size_t length;
 
-    if ((data < 0.0 - (double)FLT_MAX) || (data >(double)FLT_MAX))
+    if ((data < (double)(0.0 - FLT_MAX)) || (data >(double)FLT_MAX))
     {
         length = 8;
         utilsCopyValue(dataBuffer, &data, 8);
@@ -366,7 +366,7 @@ static iowa_status_t prv_getLength(iowa_lwm2m_uri_t *baseUriP,
         {
             size_t dataLength;
 
-            if (dataP[i].value.asFloat < 0.0 - (double)FLT_MAX
+            if (dataP[i].value.asFloat < (double)(0.0 - FLT_MAX)
                 || dataP[i].value.asFloat > (double)FLT_MAX)
             {
                 dataLength = 8;

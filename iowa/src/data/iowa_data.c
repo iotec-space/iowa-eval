@@ -381,7 +381,7 @@ iowa_status_t dataLwm2mConsolidate(size_t dataCount,
                 }
 
                 // Cap our acceptable precision loss, for large values
-                if (epsilon > 0.5)
+                if (epsilon > (double)0.5)
                 {
                     epsilon = 0.5;
                 }

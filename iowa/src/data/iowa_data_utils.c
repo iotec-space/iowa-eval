@@ -1511,8 +1511,8 @@ bool dataUtilsCompareFloatingPointNumbers(double num1,
         return true;
     }
 
-    return (((num1 - num2) <= FLT_EPSILON)
-            && ((num1-num2) >= -FLT_EPSILON));
+    return (((num1 - num2) <= (double)FLT_EPSILON)
+            && ((num1-num2) >= (double)-FLT_EPSILON));
 }
 
 
